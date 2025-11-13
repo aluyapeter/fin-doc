@@ -24,10 +24,10 @@
               echo "STRIPE_WEBHOOK_SECRET=${{ secrets.STRIPE_WEBHOOK_SECRET }}" >> .env
     
           - name: Build and run services
-            run: docker-compose up --build -d
+            run: docker compose up --build -d
     
           - name: Wait for database
             run: sleep 10
     
           - name: Run tests
-            run: docker-compose exec app pytest -v
+            run: docker compose exec app pytest -v
